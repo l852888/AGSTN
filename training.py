@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from keras import backend
+ 
+def rmse(y_true, y_pred):
+	return backend.sqrt(backend.mean(backend.square(y_pred - y_true), axis=-1))
 #======read data===================================================
 Y=np.load(r"Total_Y.npy")
 graph_conv_filter=preprocess_adj_tensor_with_identity(matrix) #matrix:edge weight of graph.
@@ -92,7 +96,8 @@ cnninput=Input(shape=(past_steps,number_of_sensors))
 #LSTM
 output=LSTM(number_of_sensors)(cnninput)
 output1=Dense(number_of_sensors)(output)
-    
+ 
+#Learning attention weight for adjustment
 output=keras.layers.average([output1,cnnoutput])
 output=Multiply()([output,t])
     
