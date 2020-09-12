@@ -8,7 +8,9 @@ def rmse(y_true, y_pred):
 #======read data===================================================
 Y=np.load(r"Total_Y.npy")
 graph_conv_filter=preprocess_adj_tensor_with_identity(matrix) #matrix:edge weight of graph.
-                                                              #we utilize cosine similarity to bulid the relationship between each sensors.
+								#we utilize cosine similarity to bulid the relationship between each sensors.
+
+#X_train to X_train5 means 6 past steps data for all the sensors
 X_train=final[0:train_size]
 X_test=final[train_size:]
 X_train1=final1[0:train_size]
