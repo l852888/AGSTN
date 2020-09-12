@@ -1,2 +1,5 @@
-# AGSTN
+# AGSTN: Forecasting Urban Sensory Values through Learning Attention-adjusted Graph Spatio-Temporal Networks
 Official implementation of AGSTN model(ICDM2020)
+* Abstract:
+
+Forecasting spatio-temporal correlated time series of sensor values is crucial in urban applications, such as air pollution alert, biking resource management, and intelligent transportation systems. While recent advances exploit graph neural networks (GNN) to better learn spatial and temporal dependencies between sensors, they cannot model time-evolving spatio-temporal correlation (STC) between sensors, and require pre-defined graphs, which are neither always available nor totally reliable, and target at only a specific type of sensor data at one time. Moreover, since the form of time-series fluctuation is varied across sensors, a model needs to learn fluctuation modulation. To tackle these issues, in this work, we propose a novel GNN-based model, \textit{Attention-adjusted Graph Spatio-Temporal Network} (AGSTN). In AGSTN, multi-graph convolution with sequential learning is developed to learn time-evolving STC. Fluctuation modulation is realized by a proposed attention adjustment mechanism. Experiments on three sensor data, air quality, bike demand, and traffic flow, exhibit that AGSTN outperforms the state-of-the-art methods.
